@@ -8,7 +8,7 @@ const Hero = (): JSX.Element => {
       <div className="flex gap-36 items-center mx-52">
         <div className="flex flex-col gap-5">
           <div className="font-mono text-lg text-emerald-400">
-            Hello there my name is
+            Hello, my name is
           </div>
           <div className="font-sans text-7xl font-extrabold">
             Alexander Filsecker.
