@@ -29,7 +29,8 @@ export const jobsInfo: JobInfo[] = [
     dateRange: "Jun 2023 - Jan 2024",
     companyName: "U-Zave",
     description: {
-      sumary: "",
+      sumary:
+        "yada yadadfjalñ añskldjfañsldjkfñalkskj ñaf alkñjasdlñkj ñlkaksjdf añlslkdjf asdlñfj ",
     },
   },
   {
@@ -38,7 +39,8 @@ export const jobsInfo: JobInfo[] = [
     dateRange: "Jun 2022 - Dec 2022",
     companyName: "Sandiman S.A.",
     description: {
-      sumary: "",
+      sumary:
+        "yada yadadfjalñ añskldjfañsldjkfñalkskj ñaf alkñjasdlñkj ñlkaksjdf añlslkdjf asdlñfj ",
     },
   },
   {
@@ -47,7 +49,8 @@ export const jobsInfo: JobInfo[] = [
     dateRange: "May 2022 - Jun 2022",
     companyName: "Go-Ex",
     description: {
-      sumary: "",
+      sumary:
+        "yada yadadfjalñ añskldjfañsldjkfñalkskj ñaf alkñjasdlñkj ñlkaksjdf añlslkdjf asdlñfj ",
     },
   },
 ];
