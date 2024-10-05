@@ -9,11 +9,11 @@ const Experience = (): JSX.Element => {
   const [activeCard, setActiveCard] = useState(0);
 
   return (
-    <div className="flex flex-col text-white bg-slate-900 py-20 px-52">
-      <div className="text-6xl w-min font-sans font-extrabold text-slate-300">
-        Experience
+    <div className="flex flex-col gap-10 text-white bg-slate-900 pt-20 px-52">
+      <div className="text-6xl font-sans font-extrabold text-slate-300 text-center">
+        My Experience
       </div>
-      <div className="h-full flex gap-6 justify-center items-center pt-10">
+      <div className="grid grid-cols-2 grid-rows-2 gap-10">
         {jobsInfo.map((jobInfo, index) => (
           <ExperienceCard
             key={index}
