@@ -27,7 +27,7 @@ const SkillCard = ({
         width={200}
         height={100}
       />
-      <div className="text-white">{skillInfo.name}</div>
+      <div className="text-white text-3xl">{skillInfo.name}</div>
     </div>
   );
 };

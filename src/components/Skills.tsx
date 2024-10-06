@@ -27,7 +27,7 @@ const Skills = (): JSX.Element => {
   useEffect(() => {
     const interval = setInterval(() => {
       if (translation >= pxToBreak) {
-        setTranslation(1);
+        setTranslation(0);
         setShuffeledSkills((prev) => {
           const first = prev.shift();
           if (first === undefined) {
@@ -36,10 +36,9 @@ const Skills = (): JSX.Element => {
           prev.push(first);
           return prev;
         });
-      } else {
-        setTranslation((t) => t + 1);
       }
-    }, 20);
+      setTranslation((t) => t + 1);
+    }, 10);
     return () => {
       clearInterval(interval);
     };
