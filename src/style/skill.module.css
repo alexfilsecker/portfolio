@@ -1,0 +1,12 @@
+.skillCard {
+  animation: card-translation 1s linear infinite;
+}
+
+@keyframes card-translation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50px);
+  }
+}
