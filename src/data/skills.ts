@@ -11,7 +11,8 @@ const skills: SkillInfo[] = [
   { path: "css.png", name: "CSS" },
   { path: "html.png", name: "HTML" },
   { path: "tailwind.png", name: "Tailwind CSS" },
-  { path: "aws.png", name: "Amazon Web Services" },
+  { path: "aws.png", name: "AWS" },
+  { path: "postgres.png", name: "Postgres" },
 ];
 
 export const randomizeList = (list: SkillInfo[]): SkillInfo[] => {

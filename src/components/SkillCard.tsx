@@ -16,18 +16,21 @@ const SkillCard = ({
   skillInfo,
 }: SkillCardProps): JSX.Element => {
   return (
-    <div
-      className={`p-10 bg-slate-900 rounded-2xl min-w-96 flex flex-col justify-center items-center gap-10`}
-      style={{ transform: `translateX(-${translation}px)` }}
-      ref={myref}
-    >
-      <Image
-        src={`/images/skills/${skillInfo.path}`}
-        alt="skill-logo"
-        width={200}
-        height={100}
-      />
-      <div className="text-white text-3xl">{skillInfo.name}</div>
+    <div style={{ transform: `translateX(-${translation}px)` }}>
+      <div
+        className={`p-10 bg-slate-900 rounded-2xl min-w-60 flex flex-col justify-center items-center gap-10 hover:scale-105 transition-transform`}
+        ref={myref}
+      >
+        <Image
+          src={`/images/skills/${skillInfo.path}`}
+          alt="skill-logo"
+          width={200}
+          height={100}
+        />
+        <div className="text-white text-xl font-extrabold">
+          {skillInfo.name}
+        </div>
+      </div>
     </div>
   );
 };
