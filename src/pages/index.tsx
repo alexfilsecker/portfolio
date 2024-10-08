@@ -1,6 +1,6 @@
 import Experience from "@/components/Experience";
 import Hero from "@/components/Hero";
-import NavBar from "@/components/NavBar";
+import SideProjects from "@/components/SideProject";
 import Skills from "@/components/Skills";
 
 const Index = (): JSX.Element => {
@@ -10,6 +10,7 @@ const Index = (): JSX.Element => {
       <Hero />
       <Experience />
       <Skills />
+      <SideProjects />
     </div>
   );
 };

@@ -12,7 +12,7 @@ const Skills = (): JSX.Element => {
   const refs = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
-    setShuffeledSkills(randomizeList(skills));
+    setShuffeledSkills(randomizeList(Object.values(skills)));
   }, []);
 
   useEffect(() => {
@@ -49,7 +49,7 @@ const Skills = (): JSX.Element => {
       <div className="text-6xl text-slate-300 font-extrabold ">
         Technical Skills
       </div>
-      <div className="flex items-center gap-6 h-96 w-full overflow-x-hidden">
+      <div className="flex items-center gap-6 w-full overflow-x-hidden py-10">
         {shuffeledSkills.map((skill, i) => (
           <SkillCard
             key={i}

@@ -1,19 +1,33 @@
+import { Javascript } from "@mui/icons-material";
+
 export type SkillInfo = {
   path: string;
   name: string;
+  link: string;
 };
 
-const skills: SkillInfo[] = [
-  { path: "next.webp", name: "Next.js" },
-  { path: "react.png", name: "React" },
-  { path: "typescript.png", name: "Typescript" },
-  { path: "javascript.png", name: "Javascript" },
-  { path: "css.png", name: "CSS" },
-  { path: "html.png", name: "HTML" },
-  { path: "tailwind.png", name: "Tailwind CSS" },
-  { path: "aws.png", name: "AWS" },
-  { path: "postgres.png", name: "Postgres" },
-];
+type Skills =
+  | "next"
+  | "react"
+  | "typescript"
+  | "javascript"
+  | "css"
+  | "html"
+  | "tailwind"
+  | "aws"
+  | "postgres";
+
+const skills: { [key in Skills]: SkillInfo } = {
+  next: { path: "next.webp", name: "Next.js", link: "https://nextjs.org/" },
+  react: { path: "react.png", name: "React", link: "" },
+  typescript: { path: "typescript.png", name: "Typescript", link: "" },
+  javascript: { path: "javascript.png", name: "Javascript", link: "" },
+  css: { path: "css.png", name: "CSS", link: "" },
+  html: { path: "html.png", name: "HTML", link: "" },
+  tailwind: { path: "tailwind.png", name: "Tailwind CSS", link: "" },
+  aws: { path: "aws.png", name: "AWS", link: "" },
+  postgres: { path: "postgres.png", name: "Postgres", link: "" },
+};
 
 export const randomizeList = (list: SkillInfo[]): SkillInfo[] => {
   // Create a copy of the list to avoid modifying the original

@@ -26,7 +26,7 @@ const ExperienceCard = ({
   };
 
   return (
-    <div className={`bg-slate-900 transition-all rounded-2xl`}>
+    <div className={`transition-all rounded-2xl h-min`}>
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-2">
           <div className="flex items-start gap-4 text-4xl">

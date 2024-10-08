@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Router, useRouter } from "next/router";
 import { LegacyRef, MutableRefObject, useState } from "react";
 
 import { SkillInfo } from "@/data/skills";
@@ -15,11 +16,17 @@ const SkillCard = ({
   myref,
   skillInfo,
 }: SkillCardProps): JSX.Element => {
+  const router = useRouter();
   return (
     <div style={{ transform: `translateX(-${translation}px)` }}>
       <div
-        className={`p-10 bg-slate-900 rounded-2xl min-w-60 flex flex-col justify-center items-center gap-10 hover:scale-105 transition-transform`}
+        className={`p-5 bg-slate-900 rounded-2xl w-40 flex flex-col 
+          justify-center items-center gap-10 hover:scale-105 hover:border-2 border-emerald-400 transition-all
+          cursor-pointer`}
         ref={myref}
+        onClick={() => {
+          router.push(skillInfo.link);
+        }}
       >
         <Image
           src={`/images/skills/${skillInfo.path}`}
@@ -27,7 +34,7 @@ const SkillCard = ({
           width={200}
           height={100}
         />
-        <div className="text-white text-xl font-extrabold">
+        <div className="text-white text-xl font-extrabold text-nowrap">
           {skillInfo.name}
         </div>
       </div>

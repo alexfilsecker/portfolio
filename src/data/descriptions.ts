@@ -19,7 +19,6 @@ export const jobsInfo: JobInfo[] = [
     companyName: "U-Zave",
     description: {
       sumary: `Promoted for exceptional problem-solving and communication, driving system improvements.
-        Successfully led a team of three developers and a DevOps, implementing efficient workflows with Jira and Git flow.
         Fostered a collaborative  and inclusive environment, maintaining high technical standards.`,
     },
   },
