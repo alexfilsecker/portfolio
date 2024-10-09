@@ -62,11 +62,21 @@ const ProjectCard = ({
           {projectInfo.description}
         </p>
         <div className="flex gap-4">
-          <button className="bg-transparent border-emerald-400 border-2 p-2 hover:bg-emerald-800 rounded-lg flex gap-2 text-xl">
+          <button
+            className="bg-transparent border-emerald-400 border-2 p-2 hover:bg-emerald-800 rounded-lg flex gap-2 text-xl transition-colors"
+            onClick={() => {
+              window.open(projectInfo.link);
+            }}
+          >
             <div>Demo</div>
             <OpenInNew className="text-emerald-400" />
           </button>
-          <button className="border-emerald-400 bg-transparent border-2 p-2 hover:bg-emerald-800 rounded-lg flex gap-2 text-xl text-nowrap">
+          <button
+            className="border-emerald-400 bg-transparent border-2 p-2 hover:bg-emerald-800 rounded-lg flex gap-2 text-xl text-nowrap transition-colors"
+            onClick={() => {
+              window.open(projectInfo.source);
+            }}
+          >
             <div>Source Code</div>
             <GitHub className="text-emerald-400" />
           </button>

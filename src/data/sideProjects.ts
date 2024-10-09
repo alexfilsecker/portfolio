@@ -5,6 +5,8 @@ export type SideProjectInfo = {
   description: string;
   imagePath: string;
   skills: SkillInfo[];
+  link: string;
+  source: string;
 };
 
 export const sideProjects: SideProjectInfo[] = [
@@ -14,11 +16,15 @@ export const sideProjects: SideProjectInfo[] = [
       "A copy of 2048 asdfkjaslñkdfj añsdklfj asñldkjf ñalsdkj fñlasdjf ",
     imagePath: "2048_logo.png",
     skills: [skills.react, skills.typescript, skills.css],
+    link: "https://a-2048.web.app/",
+    source: "https://github.com/alexfilsecker/2048",
   },
   {
     title: "Hangman",
     description: "A basic hangman game",
     imagePath: "hangman.png",
     skills: [skills.react, skills.javascript, skills.css],
+    link: "",
+    source: "",
   },
 ];
