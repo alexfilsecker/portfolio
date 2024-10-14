@@ -14,7 +14,7 @@ export const sideProjects: SideProjectInfo[] = [
     title: "2048",
     description:
       "A copy of 2048 asdfkjaslñkdfj añsdklfj asñldkjf ñalsdkj fñlasdjf ",
-    imagePath: "2048_logo.png",
+    imagePath: "2048.png",
     skills: [skills.react, skills.typescript, skills.css],
     link: "https://a-2048.web.app/",
     source: "https://github.com/alexfilsecker/2048",

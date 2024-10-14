@@ -1,3 +1,4 @@
+import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
 import Hero from "@/components/Hero";
 import SideProjects from "@/components/SideProject";
@@ -11,6 +12,7 @@ const Index = (): JSX.Element => {
       <Experience />
       <Skills />
       <SideProjects />
+      <Contact />
     </div>
   );
 };
