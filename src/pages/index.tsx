@@ -71,11 +71,10 @@ const Index = (): JSX.Element => {
         <NavBar sectionPositions={sectionPositions} windowSize={windowSize} />
       )} */}
       <Hero sectionRefs={sectionRefs} />
-      <div className="h-96" />
-      {/* <Experience sectionRefs={sectionRefs} /> */}
-      {/* <Skills sectionRefs={sectionRefs} />
-      <SideProjects sectionRefs={sectionRefs} />
-      <Contact sectionRefs={sectionRefs} /> */}
+      <Experience sectionRefs={sectionRefs} />
+      <Skills sectionRefs={sectionRefs} />
+      {/* <SideProjects sectionRefs={sectionRefs} /> */}
+      {/* <Contact sectionRefs={sectionRefs} /> */}
       {/* {sectionPositions.map((section, i) => (
         <div key={i}>
           <div
