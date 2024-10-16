@@ -73,8 +73,8 @@ const Index = (): JSX.Element => {
       <Hero sectionRefs={sectionRefs} />
       <Experience sectionRefs={sectionRefs} />
       <Skills sectionRefs={sectionRefs} />
+      <SideProjects sectionRefs={sectionRefs} />
       <div className="h-96" />
-      {/* <SideProjects sectionRefs={sectionRefs} /> */}
       {/* <Contact sectionRefs={sectionRefs} /> */}
       {/* {sectionPositions.map((section, i) => (
         <div key={i}>
