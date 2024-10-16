@@ -20,7 +20,7 @@ const SkillCard = ({
   return (
     <div style={{ transform: `translateX(-${translation}px)` }}>
       <div
-        className={`p-5 bg-slate-900 rounded-2xl w-40 flex flex-col 
+        className={`p-5 bg-slate-900 rounded-2xl w-32 md:w-40 lg:w-48 flex flex-col 
           justify-center items-center gap-10 hover:scale-105 hover:border-2 border-emerald-400 transition-all
           cursor-pointer`}
         ref={myref}
@@ -34,7 +34,7 @@ const SkillCard = ({
           width={200}
           height={100}
         />
-        <div className="text-white text-xl font-extrabold text-nowrap">
+        <div className="text-slate-100 text-lg md:text-xl font-extrabold text-nowrap">
           {skillInfo.name}
         </div>
       </div>

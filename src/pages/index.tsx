@@ -66,13 +66,14 @@ const Index = (): JSX.Element => {
   }, [setSectionPositions, sectionRefs, scroll, windowSize]);
 
   return (
-    <div className="w-full flex flex-col bg-slate-950 text-white">
+    <div className="w-full flex flex-col bg-slate-950 text-red gap-10">
       {/* {sectionPositions.length > 0 && (
         <NavBar sectionPositions={sectionPositions} windowSize={windowSize} />
       )} */}
       <Hero sectionRefs={sectionRefs} />
       <Experience sectionRefs={sectionRefs} />
       <Skills sectionRefs={sectionRefs} />
+      <div className="h-96" />
       {/* <SideProjects sectionRefs={sectionRefs} /> */}
       {/* <Contact sectionRefs={sectionRefs} /> */}
       {/* {sectionPositions.map((section, i) => (
