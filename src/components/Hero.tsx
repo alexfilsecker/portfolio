@@ -1,12 +1,13 @@
 import { KeyboardArrowDownRounded } from "@mui/icons-material";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { MutableRefObject, useEffect, useState } from "react";
 
 import styles from "@/style/arrow.module.css";
+import { SectionProps } from "@/pages";
 
 // ponder una foto de perfil mirando al frente
 
-const Hero = (): JSX.Element => {
+const Hero = ({ sectionRefs }: SectionProps): JSX.Element => {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -22,7 +23,14 @@ const Hero = (): JSX.Element => {
   }, []);
 
   return (
-    <div className="h-screen text-white flex flex-col gap-16 justify-center items-center bg-slate-950">
+    <div
+      className="h-screen text-white flex flex-col gap-16 justify-center items-center bg-slate-950 "
+      ref={(el) => {
+        if (el !== null) {
+          sectionRefs.current[0] = el;
+        }
+      }}
+    >
       <div className="flex gap-36 items-center mx-52">
         <div className="flex flex-col gap-5">
           <div className="font-mono text-lg text-emerald-400">

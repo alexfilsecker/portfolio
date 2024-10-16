@@ -1,10 +1,20 @@
+import { MutableRefObject } from "react";
+
 import { jobsInfo } from "@/data/descriptions";
 
 import ExperienceCard from "./ExperienceCard";
+import { SectionProps } from "@/pages";
 
-const Experience = (): JSX.Element => {
+const Experience = ({ sectionRefs }: SectionProps): JSX.Element => {
   return (
-    <div className="flex flex-col gap-10 text-white bg-slate-950 px-52">
+    <div
+      className="flex flex-col gap-10 text-white bg-slate-950 px-52"
+      ref={(el) => {
+        if (el !== null) {
+          sectionRefs.current[1] = el;
+        }
+      }}
+    >
       <div className="text-6xl font-sans font-extrabold text-slate-300">
         My Experience
       </div>

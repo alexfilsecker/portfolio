@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { MutableRefObject, useEffect, useRef, useState } from "react";
 
 import skills, { randomizeList, SkillInfo } from "@/data/skills";
 
 import SkillCard from "./SkillCard";
+import { SectionProps } from "@/pages";
 
-const Skills = (): JSX.Element => {
+const Skills = ({ sectionRefs }: SectionProps): JSX.Element => {
   const [translation, setTranslation] = useState(0);
   const [pxToBreak, setPxToBreak] = useState(0);
   const [shuffeledSkills, setShuffeledSkills] = useState<SkillInfo[]>([]);
@@ -45,8 +46,15 @@ const Skills = (): JSX.Element => {
   }, [translation, pxToBreak]);
 
   return (
-    <div className="bg-slate-950 py-10 flex flex-col items-center gap-10">
-      <div className="text-6xl text-slate-300 font-extrabold ">
+    <div
+      className="bg-slate-950 py-10 flex flex-col items-center gap-10"
+      ref={(el) => {
+        if (el !== null) {
+          sectionRefs.current[2] = el;
+        }
+      }}
+    >
+      <div className="text-6xl text-slate-300 font-extrabold">
         Technical Skills
       </div>
       <div className="flex items-center gap-6 w-full overflow-x-hidden py-10">
