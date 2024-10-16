@@ -1,9 +1,9 @@
 import { MutableRefObject, useEffect, useRef, useState } from "react";
 
 import skills, { randomizeList, SkillInfo } from "@/data/skills";
+import { SectionProps } from "@/pages";
 
 import SkillCard from "./SkillCard";
-import { SectionProps } from "@/pages";
 
 const Skills = ({ sectionRefs }: SectionProps): JSX.Element => {
   const [translation, setTranslation] = useState(0);

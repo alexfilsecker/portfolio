@@ -2,8 +2,8 @@ import { KeyboardArrowDownRounded } from "@mui/icons-material";
 import Image from "next/image";
 import { MutableRefObject, useEffect, useState } from "react";
 
-import styles from "@/style/arrow.module.css";
 import { SectionProps } from "@/pages";
+import styles from "@/style/arrow.module.css";
 
 // ponder una foto de perfil mirando al frente
 

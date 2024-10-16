@@ -1,9 +1,9 @@
 import { MutableRefObject } from "react";
 
 import { sideProjects } from "@/data/sideProjects";
+import { SectionProps } from "@/pages";
 
 import ProjectCard from "./ProjectCard";
-import { SectionProps } from "@/pages";
 
 const SideProjects = ({ sectionRefs }: SectionProps): JSX.Element => {
   return (

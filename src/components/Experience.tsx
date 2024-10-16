@@ -1,9 +1,9 @@
 import { MutableRefObject } from "react";
 
 import { jobsInfo } from "@/data/descriptions";
+import { SectionProps } from "@/pages";
 
 import ExperienceCard from "./ExperienceCard";
-import { SectionProps } from "@/pages";
 
 const Experience = ({ sectionRefs }: SectionProps): JSX.Element => {
   return (

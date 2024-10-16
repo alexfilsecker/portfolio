@@ -1,8 +1,9 @@
 import { MutableRefObject } from "react";
 
+import { SectionProps } from "@/pages";
+
 import ContactForm from "./ContactForm";
 import ContactInfo from "./ContactInfo";
-import { SectionProps } from "@/pages";
 
 const Contact = ({ sectionRefs }: SectionProps): JSX.Element => {
   return (
