@@ -17,7 +17,7 @@ const Experience = ({ sectionRefs }: SectionProps): JSX.Element => {
           }
         }}
       >
-        <div className="text-5xl md:text-6xl font-extrabold text-slate-100 text-center md:text-left">
+        <div className="text-5xl md:text-6xl font-extrabold text-slate-100 text-center">
           My Experience
         </div>
         <div className="flex items-center h-full">

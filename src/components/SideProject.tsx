@@ -1,5 +1,3 @@
-import { MutableRefObject } from "react";
-
 import { sideProjects } from "@/data/sideProjects";
 import { SectionProps } from "@/pages";
 

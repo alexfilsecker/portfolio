@@ -1,3 +1,4 @@
+import { useMediaQuery } from "@mui/material";
 import { MutableRefObject, useEffect, useRef, useState } from "react";
 
 import Contact from "@/components/Contact";
@@ -6,6 +7,7 @@ import Hero from "@/components/Hero";
 import NavBar from "@/components/NavBar";
 import SideProjects from "@/components/SideProject";
 import Skills from "@/components/Skills";
+import mQueries from "@/utils/mediaQueries";
 
 export type SectionProps = {
   sectionRefs: MutableRefObject<HTMLDivElement[]>;
@@ -23,6 +25,8 @@ export type WindowSize = {
 };
 
 const Index = (): JSX.Element => {
+  const notPhone = useMediaQuery(mQueries.md);
+
   const [sectionPositions, setSectionPositions] = useState<SectionPosition[]>(
     []
   );
@@ -67,15 +71,14 @@ const Index = (): JSX.Element => {
 
   return (
     <div className="w-full flex flex-col bg-slate-950 text-red gap-10">
-      {/* {sectionPositions.length > 0 && (
+      {sectionPositions.length > 0 && notPhone && (
         <NavBar sectionPositions={sectionPositions} windowSize={windowSize} />
-      )} */}
+      )}
       <Hero sectionRefs={sectionRefs} />
       <Experience sectionRefs={sectionRefs} />
       <Skills sectionRefs={sectionRefs} />
       <SideProjects sectionRefs={sectionRefs} />
-      <div className="h-96" />
-      {/* <Contact sectionRefs={sectionRefs} /> */}
+      <Contact sectionRefs={sectionRefs} />
       {/* {sectionPositions.map((section, i) => (
         <div key={i}>
           <div

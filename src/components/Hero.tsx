@@ -59,7 +59,7 @@ const Hero = ({ sectionRefs }: SectionProps): JSX.Element => {
               src="/images/alex-profile.png"
               width={1500}
               height={1000}
-              className="border-2 rounded-full border-emerald-500 bg-slate-900"
+              className="border-2 rounded-full border-emerald-500 bg-slate-900 max-w-96"
             />
           )}
         </div>

@@ -9,7 +9,7 @@ type InfoProps = {
 const Info = ({ name, icon, onClick }: InfoProps): JSX.Element => {
   return (
     <div
-      className=" transition-colors p-1 flex gap-3 text-2xl hover:border-emerald-400 border-2 rounded-md border-transparent cursor-pointer items-center"
+      className="transition-colors text-slate-50 p-1 flex gap-3 text-2xl hover:border-emerald-400 border-2 rounded-md border-transparent cursor-pointer items-center"
       onClick={onClick}
     >
       {icon}
@@ -20,7 +20,7 @@ const Info = ({ name, icon, onClick }: InfoProps): JSX.Element => {
 
 const ContactInfo = (): JSX.Element => {
   return (
-    <div className="w-1/2 flex flex-col gap-3">
+    <div className="flex flex-col gap-3 md:w-1/2">
       <Info
         name="LinkedIn"
         icon={<LinkedIn fontSize="inherit" />}
