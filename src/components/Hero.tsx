@@ -9,22 +9,15 @@ import mQueries from "@/utils/mediaQueries";
 
 import MarginContainer from "./MarginContainer";
 
-const Hero = ({ sectionRefs }: SectionProps): JSX.Element => {
-  const [scrollY, setScrollY] = useState(0);
+type HeroProps = {
+  scrollY: number;
+};
 
+const Hero = ({
+  sectionRefs,
+  scrollY,
+}: SectionProps & HeroProps): JSX.Element => {
   const showProfile = useMediaQuery(mQueries.md);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <MarginContainer>

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { animateScroll } from "react-scroll";
 
 import { SectionPosition, WindowSize } from "@/pages";
 
@@ -70,7 +71,6 @@ const NavBar = ({ sectionPositions, windowSize }: NavBarProps): JSX.Element => {
       const maxAbsouluteDev = currSectionTopLeave;
       normalizedDeviation = -(1 + exitTopD / maxAbsouluteDev);
     }
-    console.log(rects, current);
     const pxDeviation = normalizedDeviation * rects[current].width * 0.1;
     setDeviation(pxDeviation);
 
@@ -91,10 +91,17 @@ const NavBar = ({ sectionPositions, windowSize }: NavBarProps): JSX.Element => {
           {sections.map((section, index) => (
             <div
               key={index}
-              className="px-3 py-1 rounded-full cursor-pointer z-50"
+              className="px-3 py-1 rounded-full cursor-pointer z-50 hover:text-emerald-200 transition-colors"
               ref={(el) => {
                 if (el !== null) {
                   itemsRefs.current[index] = el;
+                }
+              }}
+              onClick={() => {
+                if (containerPos !== null && containerPos.bottom) {
+                  const scrollDistance =
+                    sectionPositions[index].top - containerPos.bottom;
+                  animateScroll.scrollMore(scrollDistance, { duration: 300 });
                 }
               }}
             >

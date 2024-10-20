@@ -74,7 +74,7 @@ const Index = (): JSX.Element => {
       {sectionPositions.length > 0 && notPhone && (
         <NavBar sectionPositions={sectionPositions} windowSize={windowSize} />
       )}
-      <Hero sectionRefs={sectionRefs} />
+      <Hero sectionRefs={sectionRefs} scrollY={scroll} />
       <Experience sectionRefs={sectionRefs} />
       <Skills sectionRefs={sectionRefs} />
       <SideProjects sectionRefs={sectionRefs} />
