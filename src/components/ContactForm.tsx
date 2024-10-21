@@ -47,7 +47,6 @@ const ContactForm = (): JSX.Element => {
     case "success": {
       bottomComponent = (
         <Alert
-          icon={<Check fontSize="inherit" />}
           severity="success"
           onClose={() => {
             setFormStatus("idle");
