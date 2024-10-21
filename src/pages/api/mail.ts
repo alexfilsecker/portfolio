@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import Mailjet, { SendEmailV3_1 } from "node-mailjet";
+import Mailjet from "node-mailjet";
 
 const API_KEY = process.env.API_KEY;
 if (API_KEY === undefined) {
