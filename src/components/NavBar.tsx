@@ -71,7 +71,7 @@ const NavBar = ({ sectionPositions, windowSize }: NavBarProps): JSX.Element => {
       const maxAbsouluteDev = currSectionTopLeave;
       normalizedDeviation = -(1 + exitTopD / maxAbsouluteDev);
     }
-    const pxDeviation = normalizedDeviation * rects[current].width * 0.1;
+    const pxDeviation = normalizedDeviation * rects[current].width * 0.03;
     setDeviation(pxDeviation);
 
     if (exitTopD && exitTopD > 0) {
