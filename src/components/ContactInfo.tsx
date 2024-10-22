@@ -1,9 +1,10 @@
 import { Email, GitHub, LinkedIn, Phone } from "@mui/icons-material";
+import Link from "next/link";
 
 type InfoProps = {
   name: string;
   icon: JSX.Element;
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 const Info = ({ name, icon, onClick }: InfoProps): JSX.Element => {
@@ -25,14 +26,16 @@ const ContactInfo = (): JSX.Element => {
         name="LinkedIn"
         icon={<LinkedIn fontSize="inherit" />}
         onClick={() => {
-          console.log("añsldkja");
+          window.open(
+            "https://www.linkedin.com/in/alexander-filsecker-4a961412a"
+          );
         }}
       />
       <Info
         name="GitHub"
         icon={<GitHub fontSize="inherit" />}
         onClick={() => {
-          console.log("añsldkja");
+          window.open("https://github.com/alexfilsecker");
         }}
       />
       <Info
@@ -42,13 +45,12 @@ const ContactInfo = (): JSX.Element => {
           console.log("añsldkja");
         }}
       />
-      <Info
-        name="alexfilsecker@gmail.com"
-        icon={<Email fontSize="inherit" />}
-        onClick={() => {
-          console.log("añsldkja");
-        }}
-      />
+      <Link href="mailto:alexfilsecker@gmail.com">
+        <Info
+          name="alexfilsecker@gmail.com"
+          icon={<Email fontSize="inherit" />}
+        />
+      </Link>
     </div>
   );
 };

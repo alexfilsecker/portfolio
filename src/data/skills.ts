@@ -19,6 +19,11 @@ type Skills =
   | "ruby"
   | "rails"
   | "aws"
+  | "firebase"
+  | "digitalOcean"
+  | "mailjet"
+  | "docker"
+  | "cloudflare"
   | "postgres";
 
 const skills: { [key in Skills]: SkillInfo } = {
@@ -35,6 +40,11 @@ const skills: { [key in Skills]: SkillInfo } = {
   cpp: { path: "cpp.png", name: "C++", link: "" },
   ruby: { path: "ruby.png", name: "Ruby", link: "" },
   rails: { path: "rails.png", name: "Ruby on Rails", link: "" },
+  digitalOcean: { path: "digital-ocean.png", name: "Digital Ocean", link: "" },
+  mailjet: { path: "mailjet.png", name: "Mailjet", link: "" },
+  firebase: { path: "firebase.png", name: "Firebase", link: "" },
+  cloudflare: { path: "cloudflare.png", name: "Cloudflare", link: "" },
+  docker: { path: "docker.png", name: "Docker", link: "" },
 };
 
 export const randomizeList = (list: SkillInfo[]): SkillInfo[] => {

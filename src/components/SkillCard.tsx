@@ -22,7 +22,7 @@ const SkillCard = ({
   return (
     <div style={{ transform: `translateX(-${translation}px)` }}>
       <div
-        className={`p-5 bg-slate-900 rounded-2xl w-32 md:w-40 lg:w-48 flex flex-col 
+        className={`p-5 bg-slate-900 rounded-2xl w-32 md:w-32 lg:w-40 flex flex-col 
           justify-center items-center gap-10 ${hovered && "scale-105 border-2"} border-emerald-400 transition-all
           cursor-pointer`}
         ref={myref}
