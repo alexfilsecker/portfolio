@@ -44,6 +44,7 @@ const mailHandler = async (req: NextApiRequest, res: NextApiResponse) => {
         ],
         Subject: "Messaje sent to Alexander Filsecker",
         TextPart: `You have sent me the following message:\n\n${req.body.message}\n\nExpect to be talking soon :)`,
+        Headers: { "Reply-To": "alexfilsecker@gmail.com" },
       },
     ],
   });
