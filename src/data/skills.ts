@@ -14,6 +14,10 @@ type Skills =
   | "css"
   | "html"
   | "tailwind"
+  | "C"
+  | "cpp"
+  | "ruby"
+  | "rails"
   | "aws"
   | "postgres";
 
@@ -27,6 +31,10 @@ const skills: { [key in Skills]: SkillInfo } = {
   tailwind: { path: "tailwind.png", name: "Tailwind CSS", link: "" },
   aws: { path: "aws.png", name: "AWS", link: "" },
   postgres: { path: "postgres.png", name: "Postgres", link: "" },
+  C: { path: "c.png", name: "C", link: "" },
+  cpp: { path: "cpp.png", name: "C++", link: "" },
+  ruby: { path: "ruby.png", name: "Ruby", link: "" },
+  rails: { path: "rails.png", name: "Ruby on Rails", link: "" },
 };
 
 export const randomizeList = (list: SkillInfo[]): SkillInfo[] => {
