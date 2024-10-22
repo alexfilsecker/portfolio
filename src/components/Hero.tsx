@@ -32,7 +32,7 @@ const Hero = ({
         <div className="flex gap-10 lg:gap-32 items-center xl">
           <div className="flex flex-col gap-5">
             <div className="font-mono text-lg text-emerald-400 text-center md:text-left">
-              Hello, my name is
+              Hi there! my name is
             </div>
             <div className="text-6xl lg:text-7xl font-extrabold text-slate-50 text-center md:text-left">
               Alexander Filsecker
@@ -42,8 +42,9 @@ const Hero = ({
               <span className="text-emerald-400 font-extrabold">Alex</span>
             </div>
             <div className="text-slate-200 mt-2 text-xl text-center md:text-left">
-              I am a software engineer dedicated to perfection and continious
-              growth.
+              I&apos;m a software engineer with a huge passion for coding and
+              capable of mastering anything I propose myself. Let&apos;s build
+              something amazing together!
             </div>
           </div>
           {showProfile && (

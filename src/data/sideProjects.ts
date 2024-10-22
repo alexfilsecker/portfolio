@@ -13,7 +13,7 @@ export const sideProjects: SideProjectInfo[] = [
   {
     title: "2048",
     description:
-      "A copy of 2048 asdfkjaslñkdfj añsdklfj asñldkjf ñalsdkj fñlasdjf ",
+      'A copy of the game "2048" using React.js with typescript and custom CSS. Hosted in firebase.',
     imagePath: "2048.png",
     skills: [skills.react, skills.typescript, skills.css],
     link: "https://a-2048.web.app/",
@@ -21,10 +21,10 @@ export const sideProjects: SideProjectInfo[] = [
   },
   {
     title: "Hangman",
-    description: "A basic hangman game",
+    description: "A basic hangman game using React.js and custom CSS.",
     imagePath: "hangman.png",
-    skills: [skills.react, skills.javascript, skills.css],
-    link: "",
-    source: "",
+    skills: [skills.react, skills.typescript, skills.css],
+    link: "https://hangman-f8613.web.app/",
+    source: "https://github.com/alexfilsecker/Hangman/",
   },
 ];
