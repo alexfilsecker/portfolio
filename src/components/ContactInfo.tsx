@@ -9,7 +9,7 @@ type InfoProps = {
 const Info = ({ name, icon, onClick }: InfoProps): JSX.Element => {
   return (
     <div
-      className="transition-colors text-slate-50 p-1 flex gap-3 text-2xl hover:border-emerald-400 border-2 rounded-md border-transparent cursor-pointer items-center"
+      className="transition-colors w-min text-slate-50 py-1 px-4 text-nowrap flex gap-3 text-2xl hover:border-emerald-400 border-2 rounded-md border-transparent cursor-pointer items-center"
       onClick={onClick}
     >
       {icon}
