@@ -66,7 +66,7 @@ const ContactForm = (): JSX.Element => {
             setFormStatus("idle");
           }}
         >
-          Ups! something went wrong.
+          Oops! something went wrong.
         </Alert>
       );
       break;
