@@ -63,7 +63,7 @@ const ProjectCard = ({
             />
           ))}
         </div>
-        <p className={`${notPhone && reverse && "text-right"}`}>
+        <p className={`${notPhone && reverse && "text-right"} text-lg`}>
           {projectInfo.description}
         </p>
         <div className="flex gap-4">

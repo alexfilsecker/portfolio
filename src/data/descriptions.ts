@@ -18,8 +18,9 @@ export const jobsInfo: JobInfo[] = [
     dateRange: "Feb 2024 - Mar 2024",
     companyName: "U-Zave",
     description: {
-      sumary: `Promoted for exceptional problem-solving and communication, driving system improvements.
-        Fostered a collaborative  and inclusive environment, maintaining high technical standards.`,
+      sumary: `Promoted for exceptional problem-solving and communicate, driving system improvements. Successfully led a team of three
+developers and a DevOps, implementing efficient workflows with Jira and Git flow. Fostered a collaborative and inclusive
+environment, maintaining high technical standards.`,
     },
   },
   {
@@ -29,7 +30,7 @@ export const jobsInfo: JobInfo[] = [
     companyName: "U-Zave",
     description: {
       sumary:
-        "yada yadadfjalñ añskldjfañsldjkfñalkskj ñaf alkñjasdlñkj ñlkaksjdf añlslkdjf asdlñfj ",
+        "Contributed to complex projects using Next.js, React.js, and backend technologies. Played a key role in frontend, backend, database, and API development, ensuring quality through testing and asynchronous processing.",
     },
   },
   {
@@ -39,7 +40,7 @@ export const jobsInfo: JobInfo[] = [
     companyName: "Sandiman S.A.",
     description: {
       sumary:
-        "yada yadadfjalñ añskldjfañsldjkfñalkskj ñaf alkñjasdlñkj ñlkaksjdf añlslkdjf asdlñfj ",
+        "Developed a telecontrol project for an AUBO robotic arm, using Qt for visualization, RTCP for cameras, and C++/Python for programming.",
     },
   },
   {
@@ -49,7 +50,7 @@ export const jobsInfo: JobInfo[] = [
     companyName: "Go-Ex",
     description: {
       sumary:
-        "yada yadadfjalñ añskldjfañsldjkfñalkskj ñaf alkñjasdlñkj ñlkaksjdf añlslkdjf asdlñfj ",
+        "Developed a 'Put to Light' MVP, using a Raspberry Pi and Python. Integrated QR readers and smart bulbs, reducing sorting time in a warehouse from 3 hours to 20 minutes.",
     },
   },
 ];
