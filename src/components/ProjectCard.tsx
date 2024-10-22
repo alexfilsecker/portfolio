@@ -1,5 +1,5 @@
 import { GitHub, OpenInNew } from "@mui/icons-material";
-import { useMediaQuery } from "@mui/material";
+import { Button, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
@@ -67,24 +67,24 @@ const ProjectCard = ({
           {projectInfo.description}
         </p>
         <div className="flex gap-4">
-          <button
-            className="bg-transparent border-emerald-400 border-2 p-2 hover:bg-emerald-800 rounded-lg flex gap-2 text-lg md:text-xl transition-colors"
+          <Button
             onClick={() => {
               window.open(projectInfo.link);
             }}
+            endIcon={<OpenInNew />}
+            variant="outlined"
           >
-            <div>Demo</div>
-            <OpenInNew className="text-emerald-400" />
-          </button>
-          <button
-            className="border-emerald-400 bg-transparent border-2 p-2 hover:bg-emerald-800 rounded-lg flex gap-2 text-lg md:text-xl text-nowrap transition-colors"
+            Demo
+          </Button>
+          <Button
             onClick={() => {
               window.open(projectInfo.source);
             }}
+            endIcon={<GitHub />}
+            variant="outlined"
           >
-            <div>Source Code</div>
-            <GitHub className="text-emerald-400" />
-          </button>
+            source code
+          </Button>
         </div>
       </div>
     </div>
