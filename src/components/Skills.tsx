@@ -56,7 +56,7 @@ const Skills = ({ sectionRefs }: SectionProps): JSX.Element => {
           return prev;
         });
       }
-      setTranslation((t) => t + 1);
+      setTranslation((t) => t + 1.5);
     }, 10);
     return () => {
       clearInterval(interval);
@@ -97,7 +97,7 @@ const Skills = ({ sectionRefs }: SectionProps): JSX.Element => {
           Technical Skills
         </div>
       </MarginContainer>
-      <div className="flex gap-6 w-full h-96 overflow-x-hidden py-2">
+      <div className="flex gap-6 w-full overflow-x-hidden py-2">
         {shuffeledSkills.map((skill, i) => (
           <SkillCard
             hovered={i === hoveredIndex}
