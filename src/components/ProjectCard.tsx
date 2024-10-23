@@ -22,21 +22,21 @@ const ProjectCard = ({
 
   return (
     <div
-      className={`flex flex-col w-96 md:w-full justify-start items-center gap-5 bg-gradient-to-b
+      className={`flex flex-col w-72 sm:w-96 md:w-full justify-start items-center gap-5 bg-gradient-to-b
          from-slate-800 to-slate-900 md:to-slate-950 rounded-2xl p-5
         ${notPhone && reverse ? "md:flex-row-reverse md:bg-gradient-to-l " : "md:flex-row md:bg-gradient-to-r "} `}
     >
       <Image
         src={`/images/projects/${projectInfo.imagePath}`}
         alt=""
-        width={300}
+        width={notPhone ? 300 : 250}
         height={300}
         className="h-full"
       />
       <div
         className={`flex flex-col gap-5 ${notPhone && reverse && "items-end"}`}
       >
-        <h2 className={`text-5xl font-extrabold text-nowrap`}>
+        <h2 className={`text-4xl sm:text-5xl font-extrabold text-nowrap`}>
           {projectInfo.title}
         </h2>
         <div className="flex flex-wrap gap-3 md:justify-start justify-center">
@@ -64,6 +64,7 @@ const ProjectCard = ({
             }}
             endIcon={<OpenInNew />}
             variant="outlined"
+            size={notPhone ? "medium" : "small"}
           >
             Demo
           </Button>
@@ -74,6 +75,7 @@ const ProjectCard = ({
             className="text-nowrap"
             endIcon={<GitHub />}
             variant="outlined"
+            size={notPhone ? "medium" : "small"}
           >
             source code
           </Button>
