@@ -10,7 +10,8 @@ const Contact = ({ sectionRefs }: SectionProps): JSX.Element => {
   return (
     <MarginContainer>
       <div
-        className="flex flex-col gap-10 h-screen pt-10"
+        className="flex flex-col gap-10 pt-10"
+        style={{ height: "calc(100vh - 60px)" }}
         ref={(el) => {
           if (el !== null) {
             sectionRefs.current[4] = el;
