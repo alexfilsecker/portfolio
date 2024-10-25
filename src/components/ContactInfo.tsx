@@ -33,9 +33,7 @@ const ContactInfo = (): JSX.Element => {
         name="LinkedIn"
         icon={<LinkedIn fontSize="inherit" />}
         onClick={() => {
-          window.open(
-            "https://www.linkedin.com/in/alexander-filsecker-4a961412a"
-          );
+          window.open("https://www.linkedin.com/in/alexander-filsecker");
         }}
       />
       <Info
