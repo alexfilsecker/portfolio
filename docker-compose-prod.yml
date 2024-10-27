@@ -1,23 +1,23 @@
 services:
-  portfolio:
-    image: portfolio
-    container_name: portfolio
+  portfolio-prod:
+    image: portfolio-prod
+    container_name: portfolio-prod
     build:
       context: .
       dockerfile: ./docker/prod.Dockerfile
     command: npm run start
+    # command: tail -f /dev/null
     restart: always
     env_file:
       - ".env"
     ports:
       - 80:3000
     volumes:
-      - ./src/:/app/src
-      - ./public/:/app/public
+      - ./logs.txt/:/app/logs.txt
     networks:
-      - portfolio-network
+      - portfolio-prod-network
 
 networks:
-  portfolio-network:
+  portfolio-prod-network:
     driver: bridge
-    name: portfolio-network
+    name: portfolio-prod-network
