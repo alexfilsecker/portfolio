@@ -1,6 +1,8 @@
+import fs from "fs";
+
 import { useMediaQuery } from "@mui/material";
+import moment from "moment-timezone";
 import { GetServerSideProps } from "next";
-import pino from "pino";
 import { MutableRefObject, useEffect, useRef, useState } from "react";
 
 import Contact from "@/components/Contact";
@@ -10,8 +12,6 @@ import NavBar from "@/components/NavBar";
 import SideProjects from "@/components/SideProject";
 import Skills from "@/components/Skills";
 import mQueries from "@/utils/mediaQueries";
-
-const logger = pino({});
 
 export type SectionProps = {
   sectionRefs: MutableRefObject<HTMLDivElement[]>;
@@ -103,7 +103,15 @@ const Index = (): JSX.Element => {
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   const ipAddress = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
 
-  logger.info({ event: "someone entered the page", ip: ipAddress });
+  const now = moment().tz("Australia/Sydney").format("DD/MM/YYYYTHH:mm:ss");
+  const message = `${now} => ${ipAddress} entered the page\n`;
+  console.log(message.slice(0, -1)); // slice to remove \n
+
+  try {
+    fs.appendFileSync("logs/logs.txt", message);
+  } catch (e) {
+    console.error(e);
+  }
 
   return { props: {} };
 };

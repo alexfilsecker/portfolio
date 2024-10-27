@@ -14,6 +14,7 @@ services:
     volumes:
       - ./src/:/app/src
       - ./public/:/app/public
+      - ./logs/:/app/logs
     networks:
       - portfolio-network
 
