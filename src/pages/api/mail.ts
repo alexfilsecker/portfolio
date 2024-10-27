@@ -1,18 +1,18 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import Mailjet from "node-mailjet";
 
-const API_KEY = process.env.API_KEY;
-if (API_KEY === undefined) {
+const MAILJET_API_KEY = process.env.MAILJET_API_KEY;
+if (MAILJET_API_KEY === undefined) {
   throw new Error("API KEY UNDEFINED");
 }
-const API_SECRET = process.env.API_SECRET;
-if (API_SECRET === undefined) {
+const MAILJET_SECRET_KEY = process.env.MAILJET_SECRET_KEY;
+if (MAILJET_SECRET_KEY === undefined) {
   throw new Error("API SECRET UNDEFINED");
 }
 
 const SENDER_EMAIL = "me@alexfilsecker.com";
 
-const mailjet = Mailjet.apiConnect(API_KEY, API_SECRET);
+const mailjet = Mailjet.apiConnect(MAILJET_API_KEY, MAILJET_SECRET_KEY);
 
 const mailHandler = async (req: NextApiRequest, res: NextApiResponse) => {
   const response = await mailjet.post("send", { version: "v3.1" }).request({
