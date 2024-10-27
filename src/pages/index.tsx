@@ -1,4 +1,6 @@
 import { useMediaQuery } from "@mui/material";
+import { GetServerSideProps } from "next";
+import pino from "pino";
 import { MutableRefObject, useEffect, useRef, useState } from "react";
 
 import Contact from "@/components/Contact";
@@ -8,6 +10,8 @@ import NavBar from "@/components/NavBar";
 import SideProjects from "@/components/SideProject";
 import Skills from "@/components/Skills";
 import mQueries from "@/utils/mediaQueries";
+
+const logger = pino({});
 
 export type SectionProps = {
   sectionRefs: MutableRefObject<HTMLDivElement[]>;
@@ -94,6 +98,14 @@ const Index = (): JSX.Element => {
       ))} */}
     </div>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+  const ipAddress = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
+
+  logger.info({ event: "someone entered the page", ip: ipAddress });
+
+  return { props: {} };
 };
 
 export default Index;
