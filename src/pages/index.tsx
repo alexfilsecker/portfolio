@@ -103,7 +103,7 @@ const Index = (): JSX.Element => {
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   const ipAddress = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
 
-  const now = moment().tz("Australia/Sydney").format("DD/MM/YYYYTHH:mm:ss");
+  const now = moment().tz("Australia/Sydney").format("DD/MM/YYYY HH:mm:ss");
   const message = `${now} => ${ipAddress} entered the page\n`;
   console.log(message.slice(0, -1)); // slice to remove \n
 
