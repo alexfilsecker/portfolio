@@ -11,7 +11,13 @@ type IpInfoResponseData = {
   timezone: string;
 };
 
+const MY_IP = "220.233.75.152";
+
 const ipCheck = async (ipAddress: string): Promise<string> => {
+  if (ipAddress === MY_IP) {
+    return `YOU have entered the page. IP is still ${ipAddress}`;
+  }
+
   const ipInfoToken = process.env.IP_INFO_TOKEN;
   if (ipInfoToken === undefined) {
     return "IP_INFO_TOKEN is undefined!!!";
