@@ -12,9 +12,9 @@ import Hero from "@/components/Hero";
 import NavBar from "@/components/NavBar";
 import SideProjects from "@/components/SideProject";
 import Skills from "@/components/Skills";
+import ipCheck from "@/utils/ipCheck";
 import logMessage from "@/utils/log";
 import mQueries from "@/utils/mediaQueries";
-import ipCheck from "@/utils/ipCheck";
 
 export type SectionProps = {
   sectionRefs: MutableRefObject<HTMLDivElement[]>;
@@ -104,7 +104,6 @@ const Index = (): JSX.Element => {
 };
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
-
   const ipAddress = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
 
   let message: string;
@@ -112,13 +111,13 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
     message = "ipAddress is not a string";
   } else {
     try {
-      message = await ipCheck(ipAddress)
+      message = await ipCheck(ipAddress);
     } catch (e: unknown) {
       if (e instanceof TypeError) {
         message = e.message;
       } else {
-        message = "ERROR"
-      };
+        message = "ERROR";
+      }
     }
   }
 
