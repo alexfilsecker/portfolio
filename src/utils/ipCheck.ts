@@ -1,5 +1,4 @@
 import axios from "axios";
-import logMessage from "./log";
 
 type IpInfoResponseData = {
   ip: string;
@@ -10,23 +9,25 @@ type IpInfoResponseData = {
   org: string;
   postal: string;
   timezone: string;
-}
+};
 
 const ipCheck = async (ipAddress: string): Promise<string> => {
-
   const ipInfoToken = process.env.IP_INFO_TOKEN;
   if (ipInfoToken === undefined) {
     return "IP_INFO_TOKEN is undefined!!!";
   }
 
-  const {data} = await axios.get<IpInfoResponseData>(`https://ipinfo.io/${ipAddress}/json`, {
-    params: {
-      token: ipInfoToken,
-    },
-  });
-  const {ip, city, country} = data;
-  const message = `ip: "${ip}" - city: "${city}" - country: "${country}"`
-  return message
-}
+  const { data } = await axios.get<IpInfoResponseData>(
+    `https://ipinfo.io/${ipAddress}/json`,
+    {
+      params: {
+        token: ipInfoToken,
+      },
+    }
+  );
+  const { ip, city, country } = data;
+  const message = `ip: "${ip}" - city: "${city}" - country: "${country}"`;
+  return message;
+};
 
 export default ipCheck;
