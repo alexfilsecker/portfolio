@@ -1,6 +1,7 @@
 import fs from "fs";
 
 import { useMediaQuery } from "@mui/material";
+import axios, { AxiosError, AxiosResponse } from "axios";
 import moment from "moment-timezone";
 import { GetServerSideProps } from "next";
 import { MutableRefObject, useEffect, useRef, useState } from "react";
@@ -11,6 +12,7 @@ import Hero from "@/components/Hero";
 import NavBar from "@/components/NavBar";
 import SideProjects from "@/components/SideProject";
 import Skills from "@/components/Skills";
+import logMessage from "@/utils/log";
 import mQueries from "@/utils/mediaQueries";
 
 export type SectionProps = {
@@ -101,16 +103,29 @@ const Index = (): JSX.Element => {
 };
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
-  const ipAddress = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
+  const ipInfoToken = process.env.IP_INFO_TOKEN;
+  if (ipInfoToken === undefined) {
+    logMessage("IP_INFO_TOKEN is undefined!!!");
+    return { props: {} };
+  }
 
-  const now = moment().tz("Australia/Sydney").format("DD/MM/YYYY HH:mm:ss");
-  const message = `${now} => ${ipAddress} entered the page\n`;
-  console.log(message.slice(0, -1)); // slice to remove \n
+  const ipAddress = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
+  if (!(typeof ipAddress === "string")) {
+    logMessage("ipAddress is not a string");
+    return { props: {} };
+  }
 
   try {
-    fs.appendFileSync("logs/logs.txt", message);
-  } catch (e) {
-    console.error(e);
+    const ipInfoResponse = await axios.get(`ipinfo.io/${ipAddress}/json`, {
+      params: {
+        token: ipInfoToken,
+      },
+    });
+    console.log(ipInfoResponse.data);
+  } catch (e: unknown) {
+    if (e instanceof TypeError) {
+      logMessage(e.message);
+    } else logMessage("ERROR");
   }
 
   return { props: {} };
