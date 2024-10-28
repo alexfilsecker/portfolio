@@ -14,6 +14,7 @@ import SideProjects from "@/components/SideProject";
 import Skills from "@/components/Skills";
 import logMessage from "@/utils/log";
 import mQueries from "@/utils/mediaQueries";
+import ipCheck from "@/utils/ipCheck";
 
 export type SectionProps = {
   sectionRefs: MutableRefObject<HTMLDivElement[]>;
@@ -103,31 +104,25 @@ const Index = (): JSX.Element => {
 };
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
-  const ipInfoToken = process.env.IP_INFO_TOKEN;
-  if (ipInfoToken === undefined) {
-    logMessage("IP_INFO_TOKEN is undefined!!!");
-    return { props: {} };
-  }
 
   const ipAddress = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
+
+  let message: string;
   if (!(typeof ipAddress === "string")) {
-    logMessage("ipAddress is not a string");
-    return { props: {} };
+    message = "ipAddress is not a string";
+  } else {
+    try {
+      message = await ipCheck(ipAddress)
+    } catch (e: unknown) {
+      if (e instanceof TypeError) {
+        message = e.message;
+      } else {
+        message = "ERROR"
+      };
+    }
   }
 
-  try {
-    const ipInfoResponse = await axios.get(`ipinfo.io/${ipAddress}/json`, {
-      params: {
-        token: ipInfoToken,
-      },
-    });
-    console.log(ipInfoResponse.data);
-  } catch (e: unknown) {
-    if (e instanceof TypeError) {
-      logMessage(e.message);
-    } else logMessage("ERROR");
-  }
-
+  logMessage(message);
   return { props: {} };
 };
 
